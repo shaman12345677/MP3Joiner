@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MP3Joiner - Stažení</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .logo {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+        }
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 20px 0;
+            transition: transform 0.2s;
+        }
+        .download-btn:hover {
+            transform: translateY(-2px);
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .feature {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        .requirements {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">🎵</div>
+        <h1>MP3Joiner</h1>
+        <p>Jednoduchá macOS aplikace pro spojování MP3 souborů</p>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="https://github.com/shaman12345677/MP3Joiner/releases/latest/download/MP3Joiner-1.0.0.zip" class="download-btn">
+            📥 Stáhnout MP3Joiner v1.0.0
+        </a>
+        <p><small>Velikost: 1.2 MB | macOS 14.0+</small></p>
+    </div>
+
+    <div class="features">
+        <div class="feature">
+            <h3>🎵 Spojování MP3</h3>
+            <p>Spojujte MP3 soubory pomocí FFmpeg s vysokou kvalitou</p>
+        </div>
+        <div class="feature">
+            <h3>🖱️ Drag & Drop</h3>
+            <p>Přetahujte soubory přímo z Finderu do aplikace</p>
+        </div>
+        <div class="feature">
+            <h3>📋 Seřazování</h3>
+            <p>Seřaďte soubory šipkami nahoru/dolů s výběrem</p>
+        </div>
+        <div class="feature">
+            <h3>🎨 Moderní UI</h3>
+            <p>Krásné SwiftUI rozhraní s vlastní ikonou</p>
+        </div>
+    </div>
+
+    <div class="requirements">
+        <h3>📋 Požadavky</h3>
+        <ul>
+            <li><strong>macOS 14.0</strong> nebo novější</li>
+            <li><strong>FFmpeg</strong> - nainstalujte pomocí: <code>brew install ffmpeg</code></li>
+        </ul>
+    </div>
+
+    <h3>🚀 Instalace</h3>
+    <ol>
+        <li>Stáhněte <code>MP3Joiner-1.0.0.zip</code></li>
+        <li>Rozbalte ZIP soubor</li>
+        <li>Přetáhněte <code>MP3Joiner.app</code> do složky Applications</li>
+        <li>Spusťte aplikaci</li>
+    </ol>
+
+    <h3>🔧 Pro vývojáře</h3>
+    <p>Zdrojový kód je dostupný na <a href="https://github.com/shaman12345677/MP3Joiner">GitHub</a></p>
+
+    <div class="footer">
+        <p>Copyright © 2025 Tomáš Samek. All rights reserved.</p>
+        <p><a href="https://github.com/shaman12345677/MP3Joiner/releases">Všechny verze</a> | <a href="https://github.com/shaman12345677/MP3Joiner/issues">Nahlásit problém</a></p>
+    </div>
+</body>
+</html>
