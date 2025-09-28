@@ -1,0 +1,43 @@
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Xcode
+      uses: maxim-lobanov/setup-xcode@v1
+      with:
+        xcode-version: latest-stable
+        
+    - name: Build Release
+      run: |
+        xcodebuild -project MP3Joiner.xcodeproj -scheme MP3Joiner -configuration Release build
+        
+    - name: Create ZIP
+      run: |
+        cd /Users/samekt/Library/Developer/Xcode/DerivedData/MP3Joiner-fqxjsykaknbrsjhdmrpcxkvmgeik/Build/Products/Release
+        zip -r MP3Joiner-${{ github.ref_name }}.zip MP3Joiner.app
+        
+    - name: Upload Release Asset
+      uses: actions/upload-artifact@v4
+      with:
+        name: MP3Joiner-${{ github.ref_name }}
+        path: /Users/samekt/Library/Developer/Xcode/DerivedData/MP3Joiner-fqxjsykaknbrsjhdmrpcxkvmgeik/Build/Products/Release/MP3Joiner-${{ github.ref_name }}.zip
+        
+    - name: Create Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: /Users/samekt/Library/Developer/Xcode/DerivedData/MP3Joiner-fqxjsykaknbrsjhdmrpcxkvmgeik/Build/Products/Release/MP3Joiner-${{ github.ref_name }}.zip
+        generate_release_notes: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
