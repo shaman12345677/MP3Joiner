@@ -12,7 +12,7 @@
 
 ## 🚀 Instalace
 
-1. Stáhněte nejnovější verzi z [Releases](https://github.com/yourusername/MP3Joiner/releases)
+1. Stáhněte nejnovější verzi z [Releases](https://github.com/shaman12345677/MP3Joiner/releases)
 2. Rozbalte ZIP soubor
 3. Přetáhněte MP3Joiner.app do složky Applications
 4. Spusťte aplikaci
@@ -41,7 +41,7 @@ brew install ffmpeg
 ### Sestavení z kódu
 
 ```bash
-git clone https://github.com/yourusername/MP3Joiner.git
+git clone https://github.com/shaman12345677/MP3Joiner.git
 cd MP3Joiner
 open MP3Joiner.xcodeproj
 ```
