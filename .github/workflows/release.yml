@@ -21,23 +21,23 @@ jobs:
         
     - name: Build Release
       run: |
-        xcodebuild -project MP3Joiner.xcodeproj -scheme MP3Joiner -configuration Release build
+        xcodebuild -project MP3Joiner.xcodeproj -scheme MP3Joiner -configuration Release -derivedDataPath build build
         
     - name: Create ZIP
       run: |
-        cd /Users/samekt/Library/Developer/Xcode/DerivedData/MP3Joiner-fqxjsykaknbrsjhdmrpcxkvmgeik/Build/Products/Release
+        cd build/Build/Products/Release
         zip -r MP3Joiner-${{ github.ref_name }}.zip MP3Joiner.app
         
     - name: Upload Release Asset
       uses: actions/upload-artifact@v4
       with:
         name: MP3Joiner-${{ github.ref_name }}
-        path: /Users/samekt/Library/Developer/Xcode/DerivedData/MP3Joiner-fqxjsykaknbrsjhdmrpcxkvmgeik/Build/Products/Release/MP3Joiner-${{ github.ref_name }}.zip
+        path: build/Build/Products/Release/MP3Joiner-${{ github.ref_name }}.zip
         
     - name: Create Release
       uses: softprops/action-gh-release@v1
       with:
-        files: /Users/samekt/Library/Developer/Xcode/DerivedData/MP3Joiner-fqxjsykaknbrsjhdmrpcxkvmgeik/Build/Products/Release/MP3Joiner-${{ github.ref_name }}.zip
+        files: build/Build/Products/Release/MP3Joiner-${{ github.ref_name }}.zip
         generate_release_notes: true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
